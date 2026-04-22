@@ -1,0 +1,88 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Synology Active Backup for Business",
+        "description": "Connect to your Synology NAS to monitor Active Backup for Business tasks.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "username": "Username",
+          "password": "Password",
+          "ssl": "Use HTTPS",
+          "verify_ssl": "Verify SSL certificate"
+        },
+        "data_description": {
+          "host": "Hostname or IP address of your Synology NAS",
+          "verify_ssl": "Disable this only if you use a self-signed certificate"
+        }
+      },
+      "two_factor": {
+        "title": "Two-factor authentication",
+        "description": "The account on {host} has two-factor authentication enabled. Enter the current code from your authenticator app.",
+        "data": {
+          "otp_code": "One-time password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate with {host}",
+        "description": "The integration could not log in. Enter a new password to re-authenticate.",
+        "data": {
+          "password": "Password"
+        }
+      },
+      "reauth_two_factor": {
+        "title": "Two-factor authentication — {host}",
+        "description": "Enter the current code from your authenticator app to complete re-authentication.",
+        "data": {
+          "otp_code": "One-time password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect. Check the host and port.",
+      "invalid_auth": "Invalid username or password.",
+      "invalid_otp": "Incorrect one-time password. Try again.",
+      "unknown": "Unexpected error — check the Home Assistant logs."
+    },
+    "abort": {
+      "already_configured": "This Synology NAS is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "task_status": {
+        "name": "Status",
+        "state": {
+          "running": "Running",
+          "idle": "Idle"
+        }
+      },
+      "task_result": {
+        "name": "Last Result",
+        "state": {
+          "success": "Success",
+          "warning": "Warning",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "last_backup": {
+        "name": "Last Backup"
+      },
+      "next_backup": {
+        "name": "Next Backup"
+      },
+      "transferred_size": {
+        "name": "Transferred Size"
+      },
+      "duration": {
+        "name": "Duration"
+      },
+      "progress": {
+        "name": "Progress"
+      }
+    }
+  }
+}
