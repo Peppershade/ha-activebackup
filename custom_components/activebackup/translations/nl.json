@@ -1,0 +1,88 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Synology Active Backup for Business",
+        "description": "Verbind met je Synology NAS om Active Backup for Business taken te monitoren.",
+        "data": {
+          "host": "Host",
+          "port": "Poort",
+          "username": "Gebruikersnaam",
+          "password": "Wachtwoord",
+          "ssl": "HTTPS gebruiken",
+          "verify_ssl": "SSL-certificaat verifiëren"
+        },
+        "data_description": {
+          "host": "Hostnaam of IP-adres van je Synology NAS",
+          "verify_ssl": "Schakel dit alleen uit als je een zelfondertekend certificaat gebruikt"
+        }
+      },
+      "two_factor": {
+        "title": "Twee-factor-authenticatie",
+        "description": "Het account op {host} heeft twee-factor-authenticatie ingeschakeld. Voer de huidige code uit je authenticator-app in.",
+        "data": {
+          "otp_code": "Eenmalig wachtwoord"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Opnieuw authenticeren met {host}",
+        "description": "De integratie kon niet inloggen. Voer een nieuw wachtwoord in om opnieuw te authenticeren.",
+        "data": {
+          "password": "Wachtwoord"
+        }
+      },
+      "reauth_two_factor": {
+        "title": "Twee-factor-authenticatie — {host}",
+        "description": "Voer de huidige code uit je authenticator-app in om de herauthenticatie te voltooien.",
+        "data": {
+          "otp_code": "Eenmalig wachtwoord"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken. Controleer de host en poort.",
+      "invalid_auth": "Ongeldige gebruikersnaam of wachtwoord.",
+      "invalid_otp": "Onjuist eenmalig wachtwoord. Probeer opnieuw.",
+      "unknown": "Onverwachte fout — raadpleeg de Home Assistant-logs."
+    },
+    "abort": {
+      "already_configured": "Deze Synology NAS is al geconfigureerd.",
+      "reauth_successful": "Herauthenticatie is geslaagd."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "task_status": {
+        "name": "Status",
+        "state": {
+          "running": "Bezig",
+          "idle": "Inactief"
+        }
+      },
+      "task_result": {
+        "name": "Laatste resultaat",
+        "state": {
+          "success": "Geslaagd",
+          "warning": "Waarschuwing",
+          "error": "Fout",
+          "unknown": "Onbekend"
+        }
+      },
+      "last_backup": {
+        "name": "Laatste back-up"
+      },
+      "next_backup": {
+        "name": "Volgende back-up"
+      },
+      "transferred_size": {
+        "name": "Overgedragen grootte"
+      },
+      "duration": {
+        "name": "Duur"
+      },
+      "progress": {
+        "name": "Voortgang"
+      }
+    }
+  }
+}
